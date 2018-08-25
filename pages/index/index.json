@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "navbar": "/components/navbar/navbar",
+    "stepone": "/components/step1/step1",
+    "steptwo": "/components/step2/step2",
+    "stepthree": "/components/step3/step3",
+    "stepfour": "/components/step4/step4"
+  }
+}

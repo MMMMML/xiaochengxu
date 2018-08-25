@@ -1,0 +1,57 @@
+/* components/step2/step2.wxss */
+
+
+
+
+.box{
+  padding: 30rpx;
+  font-size: 26rpx;
+  color: #272727;
+}
+.car-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.car-square{
+  width: 10rpx;
+  height: 25rpx;
+  background: #FF0000;
+  margin-right: 30rpx;
+}
+.car-mes{
+  display: flex;
+  align-items: center;
+}
+.car-coin{
+  border: 1px solid #999999;
+  color: #999999;
+  font-size: 12px;
+  padding: 5rpx;
+  border-radius: 5rpx;
+}
+.car-input{
+  display: flex;
+  align-items: center;
+  font-size:26rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.plate{
+  width: 200rpx;
+}
+.prices{
+  text-align: center;
+  padding: 30rpx 0;
+  font-size: 15px;
+}
+.next{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20rpx;
+}
+.next button{
+  width: 40%;
+  padding: 0;
+}

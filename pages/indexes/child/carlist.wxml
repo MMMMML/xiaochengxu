@@ -1,0 +1,2 @@
+<!--pages/indexes/child/carlist.wxml-->
+<view wx:for='{{carlist}}' data-name='{{item.name}}' bindtap='getVehicle'>{{item.name}}</view>

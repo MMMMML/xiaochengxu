@@ -1,0 +1,5 @@
+<view class="section">
+ <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view >{{time||123}}</view>
+  </picker>
+</view>

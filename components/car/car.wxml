@@ -1,0 +1,33 @@
+<!--components/car/car.wxml-->
+<view class='car-title'>
+  <view class='car-mes'>
+    <view class='car-square'></view>
+      <view>车辆信息</view>
+        </view>
+          <view class='car-coin'>费用说明</view>
+      </view>
+      <view style='border-bottom:1px solid #ECECEC'>
+        <view class='car-input'>
+          <text class='plate'>车牌号</text>
+            <input placeholder="请输入车牌号" />
+          </view>
+          <view class='car-input'>
+            <text class='plate'>品牌车型</text>
+              <input placeholder="请输入车辆品牌和车型" />
+          </view>
+          </view>
+          <view class='prices' >
+            <text style='padding-right:30rpx;color:#F6615B'>换胎服务</text>
+            <text>预计费用：</text>
+          <text style='color:#F6615B'>￥100</text>
+      </view>
+    <view>
+      <text style='font-size:.5rem;color:#999'>(请确认您车辆信息，如因填写有误 ，可能会导致您无法享受保障权益而产生费用)</text>
+
+</view>
+
+      <view class='next'>
+        <button>返回</button>
+        <button style='background:#FF0000;color:white'>下一步</button>
+      </view>
+

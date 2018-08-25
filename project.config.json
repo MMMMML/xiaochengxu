@@ -1,0 +1,125 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.2",
+	"appid": "wx12d0386ea17dd327",
+	"projectname": "ma",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 4,
+			"list": [
+				{
+					"id": -1,
+					"name": "navbar",
+					"pathName": "components/navbar/navbar",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "help",
+					"pathName": "pages/help/help",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "auth",
+					"pathName": "pages/auth/auth",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "微信小程序服务手册",
+					"pathName": "pages/agreement/agreement",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "订单",
+					"pathName": "pages/road/order/order",
+					"query": "id=1F0000000080"
+				},
+				{
+					"id": 5,
+					"name": "car",
+					"pathName": "components/car/car",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "step3",
+					"pathName": "components/step3/step3",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "select",
+					"pathName": "pages/road/select/select",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "wait",
+					"pathName": "pages/wait/wait",
+					"query": "outTradeNo=1F0000000052&createTime=2018-08-22 17:07:28"
+				},
+				{
+					"id": -1,
+					"name": "订单列表",
+					"pathName": "pages/road/indent/indent",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "indent",
+					"pathName": "pages/road/indent/indent",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "wait",
+					"pathName": "pages/cancel/cancel",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cancel",
+					"pathName": "pages/cancel/cancel",
+					"query": "orderId=1F0000000055"
+				},
+				{
+					"id": -1,
+					"name": "订单",
+					"pathName": "pages/road/order/order",
+					"query": "orderId=1F0000000079"
+				}
+			]
+		}
+	}
+}

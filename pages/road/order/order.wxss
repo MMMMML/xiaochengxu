@@ -1,0 +1,63 @@
+/* pages/road/order/order.wxss */
+.box{
+  padding: 30rpx;
+  font-size: 26rpx;
+}
+.order-title{
+  display: flex;
+  justify-content: space-between;
+}
+.order-float{
+  display: flex;
+  align-items: center;
+}
+.order-square{
+  width: 10rpx;
+  height: 24rpx;
+  background: #FF0000;
+  margin-right: 16rpx;
+}
+.order-circle{
+  width: 12px;
+  height: 8px;
+  background: #F6615B;
+  border-radius: 50%;
+  margin-right: 36rpx;
+}
+.basic{
+  margin-top: 48rpx;
+  border-bottom: 1px solid #ECECEC;
+  padding: 14rpx 0;
+}
+.basic text{
+  font-weight: bold;
+}
+.order-list{
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.list-bottom{
+   border-bottom: 1px solid #ECECEC;
+}
+.hours{
+  display:flex;
+  justify-content: space-around;
+  height: 80rpx;
+  padding: 40rpx 0;
+}
+.order-button button{
+ background: #FF0000;
+ color: white;
+
+}
+.order-button text{
+  display: block;
+  color: #FF0000;
+  text-align: center;
+  padding: 20rpx 0;
+}
+.call{
+ color: #2CADE1;
+}

@@ -1,0 +1,36 @@
+/* pages/cancel/cancel.wxss */
+page{
+  font-size: 15px;
+  padding: 30rpx 60rpx;
+  box-sizing: border-box;
+}
+.icon{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid #ececec;
+  padding: 30rpx 0;
+}
+.icon image{
+  width: 166rpx;
+  height: 166rpx;
+  margin: 0 auto;
+  padding-bottom: 20rpx;
+}
+.icon text{
+  font-size: 16px;
+  font-weight: 700;
+}
+.list{
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+}
+.list text:first-of-type {
+  width: 180rpx;
+}
+.cancel-list~.cancel-list{
+  border-top: 1px solid #ececec;
+}

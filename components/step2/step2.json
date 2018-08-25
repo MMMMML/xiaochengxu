@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "i-index": "../index/index",
+    "i-index-item": "../index-item/index"
+  }
+}

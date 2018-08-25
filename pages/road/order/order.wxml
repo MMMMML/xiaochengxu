@@ -1,0 +1,62 @@
+<!--pages/road/order/order.wxml-->
+<view class='box'>
+  <view class='order-title'>
+      <view class='order-float' style='width:130rpx'>
+        <view class='order-square'></view>
+        <view>{{list.rescueName}}</view>
+      </view>
+      <view class='order-float' style='flex:1'>
+        <view class='order-circle'></view>
+        <view>{{list.position}}</view>
+      </view>
+  </view>
+
+  <view class='basic'>
+    <text>基本信息</text>
+  </view>
+  <view>
+    <view class='order-list'>
+      <text>订单号</text>
+      <text>{{list.id}}</text>
+    </view>
+    <view class='order-list'>
+      <text>车牌号</text>
+      <text>{{list.vehicleNo}}</text>
+    </view>
+    <view class='order-list'>
+      <text>联系人</text>
+      <text>{{list.name}}</text>
+    </view>
+    <view class='order-list'>
+      <text>联系电话</text>
+      <text>{{list.mobile}}</text>
+    </view>
+    <view class='order-list'>
+      <text>付款总额</text>
+      <text style='color:#F6615B'>￥{{list.totalPrice / 100}}</text>
+    </view>
+  </view>
+  <view class='basic'>
+    <text>费用明细</text>
+  </view>
+  <view class='list-bottom'>
+    <view class='order-list' wx:for='{{list.priceList}}'>
+      <text>{{item.name}}</text>
+      <text>￥{{item.price / 100}}</text>
+    </view>
+   
+  </view>
+  
+
+  <view class='hours'>
+    <text>24小时救援客服热线</text>
+    <text>400-111-9299</text>
+    <text class='call' bindtap='makecall'>拨打</text>
+  </view>
+
+  <view class='order-button'  wx:if='{{ list.state == 0 && x !== "00分00秒" }}'>
+    <button bindtap='confirm'>{{ text }}</button>
+    <text wx:if='{{ x && text === "确认支付" }}'>{{ x }}后订单未支付将自动取消，请您尽快支付</text>
+    <text wx:if='{{ x && text === "确认救援" }}'>{{ x }}后订单未确认将自动取消，请您尽快确认</text>
+  </view>
+</view>

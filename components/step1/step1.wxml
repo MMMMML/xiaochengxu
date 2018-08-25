@@ -1,0 +1,67 @@
+<view class="stepone">
+  <view class='top'>
+    <view class='left'>
+      <view class="default {{select == 4 ? 'red' : ''}}" data-select='4' bindtap="selected">搭电</view>
+      <view class="default {{select == 3 ? 'red' : ''}}" data-select='3' bindtap="selected">拖车</view>
+      <view class="default {{select == 2 ? 'red' : ''}}" data-select='2' bindtap="selected">换胎</view>
+      <view class="default {{select == 1 ? 'red' : ''}}" data-select='1' bindtap="selected">脱离困境</view>
+    </view>
+    <image src='/images/2524423482850353.png' bindtap='makecall'></image>
+  </view>
+  <!-- <image src = '/images/276739983168083286.png'
+    style = 'height:70rpx;width:70rpx;position:fixed;top:12rpx;right:12rpx;'/> -->
+  <view class='info' wx:if='{{ select == 4 || select == 2 }}'>
+    <view class='item'>
+      <view class='circle'></view>
+      <view bindtap='chooseLocation' data-type='start'>{{ positionInfo.address }}</view>
+    </view>
+    <view class='item'>
+      <text class='color type'>{{ rescueType }}服务</text>
+      <view class='priceInfo'>
+        <text>预计费用:</text>
+        <text class='color'>￥100</text>
+      </view>
+      <slot></slot>
+    </view>
+  </view>
+  <view class='info plus' wx:else>
+    <view class='item'>
+      <view class='one' style='padding-bottom:20rpx;'>
+        <view class='circle'></view>
+        <view bindtap='chooseLocation' data-type='start'>{{ positionInfo.address}}</view>
+      </view>
+      <view class='one'>
+        <view class='circle'></view>
+        <view bindtap='chooseLocation' data-type='end'>{{ endPositionInfo.address ||'请输入目的地' }}</view>
+      </view>
+    </view>
+    <view class='item radio_box'>
+      <view class='radio' data-type='车在地库' bindtap='selectPro'>
+        <image wx:if='{{ pro1 }}' src='/images/icon/radio_selected.png'></image>
+        <image wx:else src='/images/icon/radio.png'></image>
+        <view>
+          <view>车在地库</view>
+          <text class='tip'>¥100</text>
+        </view>
+      </view>
+      <view class='radio' data-type='需要附轮' bindtap='selectPro'>
+        <image wx:if='{{ pro2 }}' src='/images/icon/radio_selected.png'></image>
+        <image wx:else src='/images/icon/radio.png'></image>
+        <view>
+          <view>需要附轮</view>
+          <text class='tip'>¥{{ basePrice }}</text>
+        </view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='item_tip'>
+        <text class='color type'>{{ rescueType }}服务</text>
+        <slot></slot>
+      </view>
+      <view class='priceInfo'>
+        <text>预计费用:</text>
+        <text class='color'>￥{{ basePrice }} <text wx:if='{{ addPrice > 0 }}'> + ¥{{ addPrice }}</text></text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,27 @@
+<!--pages/help/help.wxml-->
+<view class='box'>
+    <view class='position' style='padding-top:0'>
+        <image style='width:24rpx;height:37rpx;' src='../../images/35042012485764814.png'></image>
+        <text>救援位置</text>
+    </view>
+    <view class='position-south'>
+        <text>东经：E{{longitude}}</text>
+    </view>
+    <view class='position-south'>
+        <text>北纬：N{{latitude}}</text>
+    </view>
+
+    <view class='wechat'>
+      <view class='wechat-word'>微信</view>
+      <view class='need'>这种方式需要：您使用的手机绑定该微信</view>
+      <image style='width:40rpx;height:60rpx;' src='../../images/628542329343088204.png'></image>
+      <button class='bangding' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" >使用微信绑定的手机号进行呼救</button>
+      <view class='number'>您也可以使用其他手机号进行呼救</view>
+      <input class='input' type='number'  bindinput="bindKeyInput" placeholder="请输入手机号"/>
+      <button class='must' bindtap='must'>立即呼救</button>
+    </view>
+    <view class='bottom'>
+      <view>非权益人用户需按常规直升机运输服务费用标准收取相应费用</view>
+      <view>救援电话 400-111-9299</view>
+    </view>
+</view>

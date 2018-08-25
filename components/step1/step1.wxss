@@ -1,0 +1,131 @@
+.stepone {
+  padding: 30rpx 40rpx;
+  box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  font-size: 22rpx;
+  color: #272727;
+  z-index:-1;
+
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top .left {
+  display: flex;
+  align-items: center;
+}
+
+.top .left .default {
+  margin-right: 30rpx;
+  font-size:26rpx;
+}
+
+.top image {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.default.red {
+  color: red;
+}
+
+.info {
+  margin-top: 20rpx;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 28rpx 18rpx 28rpx 48rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+}
+
+.plus .item {
+  display: flex;
+  flex-flow: column nowrap;
+  padding-left: 0;
+}
+
+.plus .one {
+  width: 100%;
+  position: relative;
+  padding-left: 48rpx;
+  box-sizing: border-box;
+}
+
+.plus .one:last-of-type .circle {
+  background: #1ABB9C;
+}
+
+.item~.item {
+  border-top: 1rpx solid #ececec;
+}
+
+.item .circle {
+  width: 15rpx;
+  height: 15rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  background: #f00;
+  transform: translate3d(0, -50%, 0);
+}
+
+.item input {
+  flex: 1;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+
+.item .color {
+  color: #f00;
+}
+
+.priceInfo {
+  margin-left: 40rpx;
+}
+
+.priceInfo .color {
+  margin-left: 30rpx;
+}
+
+.radio image {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+  margin-right: 16rpx;
+}
+
+.plus .radio_box {
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+.radio {
+  display: flex;
+}
+
+.tip {
+  display: inline-block;
+  margin-top: 10rpx;
+  color: #f00;
+}
+
+.item_tip {
+  width: 100%;
+  position: relative;
+}
+
+.plus .priceInfo {
+  width: 100%;
+  margin: 15rpx 0 0;
+}

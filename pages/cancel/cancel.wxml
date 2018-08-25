@@ -1,0 +1,45 @@
+<!--pages/cancel/cancel.wxml-->
+<view class='box'>
+  <view class='icon'>
+    <image src='../../images/354820270768124066.png'></image>
+    <text>订单已取消</text>
+  </view>
+  <view class='cancel-list'>
+    <view class='list'>
+      <text>订单号</text>
+      <text>{{list.id}}</text>
+    </view>
+    <view class='list'>
+      <text>服务项目</text>
+      <text>{{list.rescueName}}</text>
+    </view>
+    <view class='list'>
+      <text>报案时间</text>
+      <text>{{list.createTime}}</text>
+    </view>
+  </view>
+  <view class='cancel-list'>
+    <view class='list'>
+      <text>车牌号</text>
+      <text>{{list.vehicleNo}}</text>
+    </view>
+    <view class='list'>
+      <text>联系人</text>
+      <text>{{list.name}}</text>
+    </view>
+    <view class='list'>
+      <text>报案地点</text>
+      <text>{{list.position}}</text>
+    </view>
+  </view>
+  <view class='cancel-list'>
+    <view class='list'>
+      <text>付款总额</text>
+      <text style='color:#F6615B'>￥{{list.totalPrice/100}}</text>
+    </view>
+    <view class='list'>
+      <text>取消原因</text>
+      <text style='color:#F6615B'>{{list.cause}}</text>
+    </view>
+  </view>
+</view>

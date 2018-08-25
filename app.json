@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/help/help",
+    "pages/auth/auth",
+    "pages/agreement/agreement",
+    "pages/road/order/order",
+    "pages/indexes/indexes",
+    "pages/indexes/child/carlist",
+    "pages/road/select/select",
+    "pages/wait/wait",
+    "pages/road/indent/indent",
+    "pages/cancel/cancel"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "空降联盟",
+    "navigationBarTextStyle": "black"
+  }
+}

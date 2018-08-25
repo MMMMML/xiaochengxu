@@ -1,0 +1,50 @@
+<!--components/step2/step2.wxml-->
+<!--components/car/car.wxml-->
+<view class='box'>
+<view class='car-title'>
+  <view class='car-mes'>
+    <view class='car-square'></view>
+      <view>联系人信息</view>
+        </view>
+          <view class='car-coin'>费用说明</view>
+      </view>
+      <view style='border-bottom:1px solid #ECECEC'>
+        <view class='car-input'>
+          <text class='plate'>现场联系人</text>
+            <input placeholder-class='placeholderinput' placeholder="请输入真实姓名" data-type='name' bindinput='handleInput' />
+          </view>
+          <view class='car-input'>
+            <text class='plate'>联系方式</text>
+             <input placeholder-class='placeholderinput' bindinput="handleInput" data-type='mobile' placeholder="请输入电话号码" />
+          </view>
+          <view class='car-input'>
+            <text class='plate'>验证码</text>
+             <input placeholder-class='placeholderinput' placeholder="请输入验证码" data-type='verify' style='flex:1' bindinput='handleInput' />
+             <view class='code'>
+                <view style='font-size:26rpx;color:#FF0000' class='getcode' bindtap='getcode'>获取验证码</view>
+                <image style='width:24rpx;height:24rpx;padding-left:20rpx;' src='../../images/425622698221013803.png'></image>
+             </view>
+          </view>
+          <view class='car-input' style='justify-content: space-between'>
+            <text class='plate'>预约时间</text>
+              <picker  mode="multiSelector" bindchange="bindMultiPickerChange" style='width:100%;' bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+                  <view class='soon'>
+                    <view style='font-size:26rpx;'>{{ params.rescueTime || '尽快到达' }}</view>
+                    <image style='width:24rpx;height:24rpx;padding-left:20rpx;' src='../../images/41367907376594800.png'></image>
+                  </view>
+              </picker>
+          </view>
+          </view>
+          <view class='prices' >
+            <text style='padding-right:30rpx;color:#F6615B'>{{ serviceType }}服务</text>
+            <text>预计费用：</text>
+          <text style='color:#F6615B'>￥{{ totalPrice / 100 }}</text>
+      </view>
+    <view style='text-align:center'>
+      <text style='font-size:.5rem;color:#999'>(请确认您车辆信息，如因填写有误 ，可能会导致您无法享受保障权益而产生费用)</text>
+
+</view>
+</view>
+
+
+

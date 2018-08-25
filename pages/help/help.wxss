@@ -1,0 +1,78 @@
+/* pages/help/help.wxss */
+.box{
+  padding: 20rpx 60rpx;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.position{
+  display: flex;
+  align-items: center;
+  padding: 45rpx 0;
+  border-bottom: 1px solid #ECECEC;
+}
+.position-south{
+  height: 120rpx;
+  line-height: 120rpx;
+  border-bottom: 1px solid #ECECEC;
+  padding-left: 44rpx;
+}
+.position image{
+ padding-right: 17rpx;
+}
+.wechat{
+  text-align: center;
+  padding-top: 45rpx;
+  padding-bottom: 114rpx;
+}
+.wechat-word{
+  font-size: 22px;
+  padding-bottom: 17rpx;
+  letter-spacing: 1px;
+}
+.need{
+  color: #999999;
+  padding-bottom: 47rpx;
+  font-size: .8rem;
+}
+.wechat image{
+  padding-bottom: 47rpx;
+}
+.bangding{
+  color: white;
+  background: #FF0000;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: .8rem;
+  width: 469rpx;
+  border-radius: 30rpx;
+}
+.number{
+  font-size: 1rem;
+  padding-top: 94rpx;
+  padding-bottom: 38rpx;
+}
+.input{
+  margin: 0 auto;
+  border-top: 1px solid #ECECEC;
+  border-bottom: 1px solid #ECECEC;
+  height: 82rpx;
+  width: 259rpx;
+  font-size: 14px;
+}
+.must{
+  margin-top: 34rpx;
+  background: white;
+  color: #FF0000;
+  height:60rpx; 
+  width: 219rpx;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  border: 1px solid #FF0000;
+  font-size: .7rem;
+  
+}
+.bottom{
+  text-align: center;
+  color: #999999;
+  font-size: .6rem;
+}

@@ -1,0 +1,35 @@
+<!--pages/road/indent/indent.wxml-->
+<navbar left='正在进行' right='已完成' order='false' bindselected='selected'>
+  <view slot='before'>
+    <view class='order' wx:for='{{orderList1}}' data-type='{{item.id}}' bindtap='everlist'>
+        <view class='order-title'>
+          <text style='width:130rpx;font-weight:700;font-size:26rpx'>{{item.rescueName}}</text>
+          <text style='flex:1'>{{item.createTime}}</text>
+          <text wx-if='{{item.state!=0}}' style='color:red'>{{status[item.state]}}</text>
+          <button wx-if='{{item.state==0}}'>{{status[item.state]}}</button>
+      </view>
+      <view  class='order-nav'>
+          <text >{{item.position}}</text>
+      </view>
+      <view  class='order-nav2'>
+          <text>{{item.vehicleNo}}</text>
+      </view>
+      </view>
+  </view>
+  <view slot='after'>
+      <view class='order' wx:for='{{orderList2}}' data-type='{{item.id}}' bindtap='everlist2'>
+        <view class='order-title'>
+          <text style='width:130rpx;font-weight:700;font-size:26rpx'>{{item.rescueName}}</text>
+          <text style='flex:1'>{{item.createTime}}</text>
+          <text wx-if='{{item.state!=0}}' style='color:red'>{{status[item.state]}}</text>
+          <button wx-if='{{item.state==0}}'>{{status[item.state]}}</button>
+      </view>
+      <view  class='order-nav'>
+          <text >{{item.position}}</text>
+      </view>
+      <view  class='order-nav2'>
+          <text>{{item.vehicleNo}}</text>
+      </view>
+      </view>
+  </view>
+</navbar>

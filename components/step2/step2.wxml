@@ -1,0 +1,33 @@
+<!--components/step2/step2.wxml-->
+<!--components/car/car.wxml-->
+<view class='box'>
+<view class='car-title'>
+  <view class='car-mes'>
+    <view class='car-square'></view>
+      <view>车辆信息</view>
+        </view>
+          <view class='car-coin'>费用说明</view>
+      </view>
+      <view style='border-bottom:1px solid #ECECEC'>
+        <view class='car-input'>
+          <text class='plate'>车牌号</text>
+            <input placeholder="请输入车牌号" placeholder-style="color:#272727" value='{{ vehicleNo }}'  bindinput="bindKeyInput" />
+          </view>
+          <view class='car-input'>
+            <text class='plate'>品牌车型</text>
+            <view bindtap='choose' style='flex:1'>{{name ? name : '请选择车辆品牌和车型'}}</view>
+          </view>
+          </view>
+          <view class='prices' >
+            <text style='padding-right:30rpx;color:#F6615B'>{{ serviceType }}服务</text>
+            <text>预计费用：</text>
+          <text style='color:#F6615B'>￥100</text>
+      </view>
+    <view style='text-align:center'>
+      <text style='font-size:.5rem;color:#999;text-align:center'>(请确认您车辆信息，如因填写有误 ，可能会导致您无法享受保障权益而产生费用)</text>
+
+</view>
+</view>
+
+
+

@@ -1,0 +1,19 @@
+<!--components/navbar/navbar.wxml-->
+<view class='box'>
+  <view class='orderby' wx:if='{{order === false}}' bindtap='navto'>
+    <image style='width:29rpx;height:30rpx;' src='../../images/643619736139572389.png'></image>
+    <view style='font-size:12px;margin-top:-4px;'>订单</view>
+  </view>
+  <view class="nav bc_white">
+    
+    <view class="default {{selected ? 'red' : ''}}" bindtap="selected">{{left}}</view>
+    <view class="default {{selected1 ? 'red' : ''}}" bindtap="selected1">{{right}}</view>
+  </view>
+  <view class="{{selected?'show':'hidden'}}">
+      <slot name="before"></slot>
+  </view>
+  <view class="{{selected1 ? 'show' : 'hidden'}}">
+     <slot name="after"></slot>
+  </view>
+</view>
+

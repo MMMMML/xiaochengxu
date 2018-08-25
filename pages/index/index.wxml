@@ -1,0 +1,89 @@
+<!-- index.wxml-->
+<view>
+  <navbar left='直升机救援' right='道路救援' order='{{false}}'>
+    <!-- 直升机救援 -->
+    <view slot='before'>
+      <map
+        id="myMap"
+        longitude="{{longitude}}" 
+        latitude="{{latitude}}"
+        controls="{{controls}}" 
+        circles="{{circles}}" 
+        scale="17"
+        show-location
+        bindcontroltap="controltap">
+        <cover-view class='cover-kepu' >
+            <cover-image src = '../../images/566486558392241748.png' style = 'height:85rpx;width:85rpx;'/>
+        </cover-view >
+        <cover-view class='cover' bindtap='moveto'>
+            <cover-image src = '../../images/276739983168083286.png' style = 'height:80rpx;width:80rpx;' class='icons'/>
+        </cover-view >
+
+        
+        <cover-view  class='cover-main' bindtap='help'>
+            <cover-image src = '../../images/283859312312914491.png' style = 'height:211rpx;width:211rpx;'/>
+        </cover-view>
+        <cover-view  class='cover-btn' bindtap='agreement'>
+            <button>救援协议</button>
+        </cover-view>
+        </map>
+      </view >
+    <!-- 道路救援 -->
+    <view style='display:flex;flex-direction:column;height: calc(100vh - 100rpx);'  slot="after">
+      <map
+        id="myMaps"
+        longitude="{{longitude}}" 
+        latitude="{{latitude}}"
+        controls="{{controls}}" 
+        circles="{{circles}}" 
+        scale="17"
+        show-location
+        bindcontroltap="controltap">
+        <cover-view class='cover-kepu' >
+          <cover-image src = '../../images/566486558392241748.png' style = 'height:85rpx;width:85rpx;'/>
+        </cover-view >
+        <cover-view class='cover-road' bindtap='moveto'>
+          <cover-image src = '../../images/276739983168083286.png' style = 'height:80rpx;width:80rpx;' class='icons'/>
+        </cover-view >
+
+        <!-- 费用说明 -->
+        <cover-view class='wapper' wx:if='{{ close }}'>
+          <cover-view class='wapper-white'>
+            <text>123</text>
+          </cover-view>
+          <cover-view class='close'>
+            <cover-image src='../../images/close.png' class='close-btn'bindtap='close' ></cover-image>
+          </cover-view>
+        </cover-view>
+      </map>   
+      <!-- 白色弹窗 -->
+      <view class='modal'>
+      
+        <view wx:if='{{ step === 1 }}'>
+          <stepone positionInfo='{{ positionInfo }}' bind:stepone='handleStepOne'>
+            <view bindtap='priceDesc' class='slot'>费用说明</view>
+          </stepone>
+        </view>
+        <view wx:elif='{{ step === 2 }}'>
+          <steptwo name='{{ carName }}' rescueType='{{ params.rescueType || 4 }}' bind:steptwo='handleStepTwo'></steptwo>
+        </view>
+        <view wx:elif='{{ step === 3 }}'>
+          <stepthree rescueType='{{ params.rescueType || 4 }}' totalPrice='{{ params.totalPrice }}' bind:stepthree='handleStepThree'></stepthree>
+        </view>
+        <view wx:elif='{{ step === 4 }}'>
+          <stepfour></stepfour>
+        </view>
+      </view>
+      <view  class='road-btn'>
+        <view class='dadian-btn' wx:if='{{ step > 1 }}'>
+          <button data-type='sub' bindtap='changeStep' style='background:white;color:black;'>返回</button>
+          <button data-type='add' bindtap='changeStep'>下一步</button>
+        </view>
+        <view wx:else>
+          <button data-type='add' bindtap='changeStep'>下一步</button>
+        </view>
+      </view>
+    </view>
+  </navbar>
+  
+</view>
