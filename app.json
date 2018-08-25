@@ -11,7 +11,8 @@
     "pages/road/select/select",
     "pages/wait/wait",
     "pages/road/indent/indent",
-    "pages/cancel/cancel"
+    "pages/cancel/cancel",
+    "pages/price/price"
   ],
   "window": {
     "backgroundTextStyle": "light",

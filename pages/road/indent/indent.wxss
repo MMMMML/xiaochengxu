@@ -1,11 +1,13 @@
 /* pages/road/indent/indent.wxss */
 page{
   font-size: 26rpx;
-  padding: 30rpx 60rpx;
+
   box-sizing: border-box;
 }
+
 .order{
   border-bottom: 1px solid #ececec;
+    padding: 30rpx 60rpx;
 }
 .order-title{
   display: flex;

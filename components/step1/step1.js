@@ -1,4 +1,5 @@
 import { serviceDict } from '../../utils/enum.js'
+import road from '../../api/road.js'
 
 Component({
   /**
@@ -32,9 +33,7 @@ Component({
    */
   methods: {
     selected(e) {
-      console.log(e)
       const { select } = e.currentTarget.dataset
-     
       let basePriceDict = {
         1: 198,
         2: 100,

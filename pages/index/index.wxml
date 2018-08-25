@@ -15,7 +15,7 @@
         <cover-view class='cover-kepu' >
             <cover-image src = '../../images/566486558392241748.png' style = 'height:85rpx;width:85rpx;'/>
         </cover-view >
-        <cover-view class='cover' bindtap='moveto'>
+        <cover-view class='cover' data-type='1' bindtap='moveto'>
             <cover-image src = '../../images/276739983168083286.png' style = 'height:80rpx;width:80rpx;' class='icons'/>
         </cover-view >
 
@@ -42,19 +42,12 @@
         <cover-view class='cover-kepu' >
           <cover-image src = '../../images/566486558392241748.png' style = 'height:85rpx;width:85rpx;'/>
         </cover-view >
-        <cover-view class='cover-road' bindtap='moveto'>
+        <cover-view class='cover-road' data-type='2' bindtap='moveto'>
           <cover-image src = '../../images/276739983168083286.png' style = 'height:80rpx;width:80rpx;' class='icons'/>
         </cover-view >
 
         <!-- 费用说明 -->
-        <cover-view class='wapper'  wx:if='{{ close }}'  catchtouchmove="noTouch">
-          <cover-view class='wapper-white'>
-            <cover-view>123</cover-view>
-          </cover-view>
-          <cover-view class='close' bindtap='close' >
-            <cover-image src='../../images/close.png' class='close-btn' ></cover-image>
-          </cover-view>
-        </cover-view>
+        
       </map>   
       <!-- 白色弹窗 -->
       <view class='modal'>
@@ -65,10 +58,14 @@
           </stepone>
         </view>
         <view wx:elif='{{ step === 2 }}'>
-          <steptwo name='{{ carName }}' rescueType='{{ params.rescueType || 4 }}' bind:steptwo='handleStepTwo'></steptwo>
+          <steptwo name='{{ carName }}' rescueType='{{ params.rescueType || 4 }}' bind:steptwo='handleStepTwo'>
+            <view bindtap='priceDesc' class='slot'>费用说明</view>
+          </steptwo>
         </view>
         <view wx:elif='{{ step === 3 }}'>
-          <stepthree rescueType='{{ params.rescueType || 4 }}' totalPrice='{{ params.totalPrice }}' bind:stepthree='handleStepThree'></stepthree>
+          <stepthree rescueType='{{ params.rescueType || 4 }}' totalPrice='{{ params.totalPrice }}' bind:stepthree='handleStepThree'>
+            <view bindtap='priceDesc' class='slot'>费用说明</view>
+          </stepthree>
         </view>
         <view wx:elif='{{ step === 4 }}'>
           <stepfour></stepfour>

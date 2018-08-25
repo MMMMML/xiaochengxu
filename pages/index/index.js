@@ -24,25 +24,14 @@ Page({
     positionInfo: {},
     step: 1,
     params: {},
-    colse:true
+    colse:true,
+    list: []
   },
   onLoad() {
-    this.mapCtx = wx.createMapContext('myMaps')
-    // this.priceTips = {
-    //   '4': {
-    //     title: '搭电报价',
-    //     list: [{
-    //       title: '一、道路救援服务基本费用',
-    //       texts: ['搭电100元/次;']
-    //     },
-    //     {
-    //       title: '二、道路救援服务可能产生的额外费用',
-    //       text: ['因为道路救援存在的不确定性，在救援过程中产生的额外费需由您承担，如产生额外费用，请在服务完成后现场支付给救援人员，额外费用包含但不限于以下几个方面：']
-    //     }
-    //     ]
-    //   }
-    // }
+    this.mapsCtx = wx.createMapContext('myMaps')
+    this.mapCtx = wx.createMapContext('myMap')
     this.getPosition()
+    // this.priceDesc(1)
   },
   onShow() {
     let value = wx.getStorageSync('getVehiclename')
@@ -69,8 +58,15 @@ Page({
   /**
    * 地图上定位到当前位置
    */
-  moveto() {
-    this.mapCtx.moveToLocation()
+  moveto(e) {
+    console.log(e)
+    const { type } = e.currentTarget.dataset
+    if (type == 1) {
+      this.mapCtx.moveToLocation()
+    } else {
+      this.mapsCtx.moveToLocation()
+      
+    }
   },
 
   /**
@@ -204,10 +200,14 @@ Page({
     })
   },
 
-  priceDesc() {
-    this.setData({
-      close:true
+  priceDesc(flag) {
+    let type = this.data.params.rescueType || 4
+    console.log(type)
+    wx.navigateTo({
+      url: `../price/price?type=${type}`,
     })
+    
+    
   },
 
   handleStepOne(e) {

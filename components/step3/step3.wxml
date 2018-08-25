@@ -6,7 +6,7 @@
     <view class='car-square'></view>
       <view>联系人信息</view>
         </view>
-          <view class='car-coin'>费用说明</view>
+           <slot></slot>
       </view>
       <view style='border-bottom:1px solid #ECECEC'>
         <view class='car-input'>
