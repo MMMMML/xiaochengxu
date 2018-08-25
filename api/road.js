@@ -83,6 +83,14 @@ class User extends Base {
       data: params
     })
   }
+  //获取费用详情
+  getPrice(params) {
+    return this.request({
+      url: 'incallWechatMini/rescueOrder/getPriceExplanation',
+      type: 'post',
+      data: params
+    })
+  }
 }
 
 export default new User()

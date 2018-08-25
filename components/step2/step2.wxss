@@ -12,6 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;  
 
 }
 .car-square{
@@ -20,9 +21,13 @@
   background: #FF0000;
   margin-right: 30rpx;
 }
-.car-mes{
+.car-mes {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  }
+  .car-coin{
+    border: 1px solid #999999;
 }
 .car-coin{
   border: 1px solid #999999;

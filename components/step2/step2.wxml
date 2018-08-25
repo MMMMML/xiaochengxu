@@ -4,9 +4,11 @@
 <view class='car-title'>
   <view class='car-mes'>
     <view class='car-square'></view>
-      <view>车辆信息</view>
+    <view>车辆信息</view>
+    
         </view>
-          <view class='car-coin'>费用说明</view>
+          <slot></slot>
+          <!-- <view >费用说明</view> -->
       </view>
       <view style='border-bottom:1px solid #ECECEC'>
         <view class='car-input'>
