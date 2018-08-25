@@ -1,0 +1,15 @@
+<!--pages/price/price.wxml-->
+<view class='wapper'>
+          <view class='wapper-white'>
+            <view>{{list.title}}</view>
+            <view>
+              <view wx:for='{{list.list }}'>
+                <view>{{item.title}}</view>
+                <view  wx:for='{{item.texts }}'>{{item}}</view>
+              </view>
+            </view>
+          </view>
+          <view class='close' bindtap='close' >
+            <image src='../../images/close.png' class='close-btn' ></image>
+          </view>
+        </view>

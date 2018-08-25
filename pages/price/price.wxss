@@ -1,0 +1,11 @@
+/* pages/price/price.wxss */
+page{
+ 
+  font-size: 26rpx;
+}
+.wapper{
+ padding: 30rpx 60rpx;
+}
+.wapper view{
+  padding: 5rpx 0;
+}
