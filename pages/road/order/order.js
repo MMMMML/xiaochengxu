@@ -54,13 +54,13 @@ Page({
       
   },
   confirm(){
-   
+    wx.showLoading({
+      title: '加载中',
+    })
     const { text } = this.data
     road.payment({ orderId: this.data.orderId}).then(data=>{
       if (text === '确认支付') {
-        wx.showLoading({
-          title: '加载中',
-        })
+       
         const { timeStamp, nonceStr, signType, paySign } = data.payload
         const { outTradeNo, createTime } = data.payload.businessInfo
         let packages = data.payload.package
@@ -75,7 +75,7 @@ Page({
               if (res.errMsg == 'requestPayment:ok') {
                 wx.hideLoading()
                 wx.navigateTo({
-                  url: `../../wait/wait?createTime=${createTime}&outTradeNo=${outTradeNo}`,
+                  url: `../../wait/wait?createTime=${createTime}&id=${outTradeNo}`,
                 })
               }
             },

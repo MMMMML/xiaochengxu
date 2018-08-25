@@ -27,11 +27,17 @@ Page({
   },
   everlist(e){
     console.log(e)
-    let id= e.currentTarget.dataset.type
-    
-    wx.navigateTo({
+    let { id, createTime, showState }= e.currentTarget.dataset.type
+    if(showState==0){
+      wx.navigateTo({
         url: `../order/order?id=${id}`,
       })
+    }else{
+      wx.navigateTo({
+        url: `../../wait/wait?id=${id}&createTime=${createTime}&showState=${showState}`,
+      })
+    }
+    
   },
   everlist2(e){
     console.log(e)

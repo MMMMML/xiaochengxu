@@ -12,11 +12,11 @@
   </view>
 
   <view class='schedule'>
-    <text>已付款</text>
-    <text>····</text>
-    <text>已派单</text>
-    <text>····</text>
-    <text>完成服务</text>
+    <text class='{{ showState>=1 ?"status" :"" }}'>已付款</text>
+    <view class='{{index <= plan ? "red" : ""}} spuare' wx:for='{{ 4 }}'> </view>
+    <text class='{{ showState>=2 ?"status" :"" }}'>已派单</text>
+    <view class='{{index <= plan ? "red" : ""}} spuare' wx:if="{{ index > 3 }}" wx:for='{{ 8 }}'> </view>
+    <text class='{{ showState>=3 ?"status" :"" }}'>完成服务</text>
   </view>
 
   <view class='leida'>
