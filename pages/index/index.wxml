@@ -47,12 +47,12 @@
         </cover-view >
 
         <!-- 费用说明 -->
-        <cover-view class='wapper' wx:if='{{ close }}'>
+        <cover-view class='wapper'  wx:if='{{ close }}'  catchtouchmove="noTouch">
           <cover-view class='wapper-white'>
-            <text>123</text>
+            <cover-view>123</cover-view>
           </cover-view>
-          <cover-view class='close'>
-            <cover-image src='../../images/close.png' class='close-btn'bindtap='close' ></cover-image>
+          <cover-view class='close' bindtap='close' >
+            <cover-image src='../../images/close.png' class='close-btn' ></cover-image>
           </cover-view>
         </cover-view>
       </map>   

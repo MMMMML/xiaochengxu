@@ -101,13 +101,14 @@ icons{
   background: white;
   width: 80%;
   height: 60%;
-  position: absolute;
+  position: fixed;
   top: 15%;
   left: 50%;
   transform: translate(-50%);
   overflow-y: auto;
   border-radius: 20rpx;
   padding: 20rpx;
+  z-index:999;
 }
 .close{
   position: fixed;

@@ -15,7 +15,8 @@ Page({
     createTime:'',
     outTradeNo:'',
     show:false,
-    reson:''
+    reson:'',
+    plan: ''
   },
   radioChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value)
@@ -56,11 +57,51 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
     console.log(options)
-    this.setData({
-      createTime: options.createTime,
-      outTradeNo: options.outTradeNo,
+    // options.showState = 3
+    
+    let params = {
+      orderId: options.id
+    }
+    road.getOrder(params).then(data => {
+      console.log(data, '111')
+      let showState = data.payload.showState
+      console.log(showState) 
+      this.setData({
+        createTime: options.createTime,
+        outTradeNo: options.id,
+        showState
+      })
+      let pro
+      if (showState === 0) {
+        
+        pro = -1
+      } else if (showState === 1) {
+        pro = 0
+      } else if (showState === 2) {
+        pro = 4
+      } else {
+        pro = 8
+      }
+      let plan = this.data.plan + pro
+      this.setData({
+        plan
+      })
+      if (showState > 0) {
+        this.timer = setInterval(() => {
+          let plan = ((this.data.plan + 1) % 4) + pro
+          this.setData({
+            plan
+          })
+        }, 1000)
+      }
     })
+    
+  },
+
+  onHide() {
+    this.timer && clearInterval(this.timer)
   },
 
   /**

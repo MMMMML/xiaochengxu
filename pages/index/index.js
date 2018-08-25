@@ -50,6 +50,9 @@ Page({
       carName: value
     })
   },
+  noTouch:function () {
+    return;
+  }, 
   close(){
     console.log(123)
     this.setData({
