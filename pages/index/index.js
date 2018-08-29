@@ -25,7 +25,24 @@ Page({
     step: 1,
     params: {},
     colse:true,
-    list: []
+    list: [],
+    markers:[{
+      iconPath: "../../images/address.png",
+      id: 0,
+      latitude:'',
+      longitude:'',
+      width: 25,
+      height: 25,
+      callout:{
+        content: '故障点',
+        color: '#272727',
+        fontSize: 12,
+        bgColor: '#ffffff',
+        padding:3,
+        display: 'ALWAYS',
+        borderRadius:5
+      }
+    }]
   },
   onLoad() {
     this.mapsCtx = wx.createMapContext('myMaps')
@@ -43,7 +60,6 @@ Page({
     return;
   }, 
   close(){
-    console.log(123)
     this.setData({
       close:false
     })
@@ -86,6 +102,7 @@ Page({
     wx.getLocation({
       type: 'gcj02',
       success(res) {
+        console.log(res)
         const { latitude, longitude } = res
         qqmap.reverseGeocoder({
           location: {
@@ -93,6 +110,7 @@ Page({
             longitude
           },
           success(res) {
+            console.log(res)
             const { address, formatted_addresses } = res.result
             _this.setData({
               positionInfo: {
@@ -175,10 +193,15 @@ Page({
         road.createOrder(params).then(res => {
           console.log(res)
           if(res.code==200){
+            wx.removeStorageSync('getVehiclename')
+            this.setData({
+              step:1
+            })
             let result = res.payload.id
             wx.navigateTo({
               url: `../road/order/order?id=${result}`,
             })
+
           }
           if(res.code==500){
             wx.showToast({
@@ -212,15 +235,23 @@ Page({
 
   handleStepOne(e) {
     const { detail } = e
-    let { params } = this.data
+    let { params, markers } = this.data
     params = {
       ...params,
       ...detail
     }
-
+    const { startLat, startLng, endLat, endLng } = detail.rescueOrderInfo
     this.setData({
-      params
+      params,
+      markers: [{
+        ...markers[0],
+        latitude: startLat,
+        longitude: startLng
+      }],
+      latitude: startLat,
+      longitude: startLng
     })
+
   },
 
   handleStepTwo(e) {

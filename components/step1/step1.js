@@ -83,6 +83,8 @@ Component({
       const { type } = e.currentTarget.dataset
       wx.chooseLocation({
         success(res) {
+          console.log(res)
+
           const { address, latitude, longitude, name } = res
           let params
           if (type === 'start') {
@@ -102,6 +104,7 @@ Component({
               }
             }
           }
+          
           that.setData(params, () => {
             that.toParent()
           })

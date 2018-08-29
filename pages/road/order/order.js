@@ -74,7 +74,7 @@ Page({
             'success': function (res) {
               if (res.errMsg == 'requestPayment:ok') {
                 wx.hideLoading()
-                wx.navigateTo({
+                wx.redirectTo({
                   url: `../../wait/wait?createTime=${createTime}&id=${outTradeNo}`,
                 })
               }

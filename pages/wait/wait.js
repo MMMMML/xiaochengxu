@@ -37,7 +37,7 @@ Page({
     road.cancelorder(params).then(data=>{
         console.log(data)
         if(data.code==200){
-          wx.navigateTo({
+         wx.redirectTo({
             url: `../cancel/cancel?orderId=${this.data.outTradeNo}`,
           })
         }
