@@ -1,7 +1,7 @@
 /**index.wxss**/
 #myMap {
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 100rpx);
 }
 #myMaps {
   width: 100vw;

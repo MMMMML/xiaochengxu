@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 13,
+			"current": 14,
 			"list": [
 				{
 					"id": -1,
@@ -118,6 +118,12 @@
 					"name": "订单",
 					"pathName": "pages/road/order/order",
 					"query": "orderId=1F0000000128"
+				},
+				{
+					"id": 14,
+					"name": "ceshi",
+					"pathName": "pages/ma/index",
+					"query": ""
 				}
 			]
 		}

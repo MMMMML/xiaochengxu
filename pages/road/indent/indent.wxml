@@ -1,6 +1,6 @@
 <!--pages/road/indent/indent.wxml-->
 <navbar left='正在进行' right='已完成' order='false' bindselected='selected'>
-  <view slot='before'>
+  <view class='content' slot='before'>
     <view class='order' wx:for='{{orderList1}}' data-type='{{item}}' bindtap='everlist'>
         <view class='order-title'>
           <text style='width:130rpx;font-weight:700;font-size:26rpx'>{{item.rescueName}}</text>
@@ -16,7 +16,7 @@
       </view>
       </view>
   </view>
-  <view slot='after'>
+  <view class='content' slot='after'>
       <view class='order' wx:for='{{orderList2}}' data-type='{{item.id}}' bindtap='everlist2'>
         <view class='order-title'>
           <text style='width:130rpx;font-weight:700;font-size:26rpx'>{{item.rescueName}}</text>

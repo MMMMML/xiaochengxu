@@ -5,10 +5,14 @@ Page({
   },
   onChange(event) {
     console.log(event.detail, 'click right menu callback data')
+    const { index, current } = event.detail
+    wx.pageScrollTo({
+      scrollTop: current.top,
+      duration: 300
+    })
   },
   onReady() {
     road.getVehicle().then(data=>{
-      console.log(data.payload)
       let storeCity = new Array(26)
       let cities = data.payload
       const words = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
@@ -18,7 +22,6 @@ Page({
           list: []
         }
       })
-      console.log(storeCity)
       cities.forEach(item => {
         let pinyin = item.ind.toUpperCase()
         let index = words.findIndex(item => item === pinyin)
@@ -33,9 +36,10 @@ Page({
     })
   },
   selectBrand(e) {
+    console.log(e)
     const { brand } = e.currentTarget.dataset
     let params = {
-      brand: e.currentTarget.dataset.brand
+      brand
     }
     road.VehicleModelList(params).then(data=>{
       console.log(data)

@@ -38,6 +38,7 @@
         circles="{{circles}}" 
         scale="17"
         show-location
+        markers="{{markers}}"
         bindcontroltap="controltap">
         <cover-view class='cover-kepu' >
           <cover-image src = '../../images/566486558392241748.png' style = 'height:85rpx;width:85rpx;'/>

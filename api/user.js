@@ -13,6 +13,15 @@ class User extends Base {
       data: params
     })
   }
+  
+  //获取用户信息
+  WxUserInfo(params) {
+    return this.request({
+      url: 'incallWechatMini/auth/updateWxUserInfo',
+      type: 'post',
+      data: params
+    })
+  }
 }
 
 export default new User()
