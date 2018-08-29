@@ -34,7 +34,7 @@ Page({
       })
     }else{
       wx.navigateTo({
-        url: `../../wait/wait?id=${id}&createTime=${createTime}&showState=${showState}`,
+        url: `../../wait/wait?outTradeNo=${id}&createTime=${createTime}&showState=${showState}`,
       })
     }
     
