@@ -14,7 +14,10 @@ class Base {
     } else {
       contentType = params.type === 'post' ? 'application/x-www-form-urlencoded' : 'application/json'
     }
-
+    wx.showLoading({
+      title: '加载中...',
+      mask: true
+    })
     return new Promise((resolve, reject) => {
       wx.request({
         url,
@@ -37,7 +40,11 @@ class Base {
               })
             }
           }
+        },
+        complete() {
+          wx.hideLoading()
         }
+
       })
     })
   }

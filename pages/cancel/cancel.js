@@ -15,40 +15,55 @@ Page({
    */
   onLoad: function (options) {
     let params = {orderId:options.orderId}
-    console.log(params)
-    
+    console.log(options)
+    let member = options.member
+    let timeout = options.timeout
+
+    if (member=='true') {
+      // if (tiemout) {
+      wx.showModal({
+        title: '提示',
+        content: '您已取消了救援服务，费用相关问题请拨打400-111-9299',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+      // } 
+    } else if (member == 'false') {
+      if (timeout=='true'){
+        wx.showModal({
+          title: '提示',
+          content: '您已取消了救援服务，费用相关问题请拨打400-111-9299',
+          success: function (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            } else if (res.cancel) {
+              console.log('用户点击取消')
+            }
+          }
+        })
+      } else {
+        wx.showModal({
+          title: '提示',
+          content: '已支付费用7个工作日退回到账户',
+          success: function (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            } else if (res.cancel) {
+              console.log('用户点击取消')
+            }
+          }
+        })
+      }
+    }
     road.getOrder(params).then(data => {
       console.log(data)
       let result = data.payload
-      let member = data.payload.member
-      let tiemout  = data.payload.timeout
-      if(!member){
-        if (tiemout) {
-          wx.showModal({
-            title: '提示',
-            content: '您已取消了救援服务，费用相关问题请拨打400-111-9299',
-            success: function (res) {
-              if (res.confirm) {
-                console.log('用户点击确定')
-              } else if (res.cancel) {
-                console.log('用户点击取消')
-              }
-            }
-          })
-        } else {
-          wx.showModal({
-            title: '提示',
-            content: '已支付费用7个工作日退回到账户',
-            success: function (res) {
-              if (res.confirm) {
-                console.log('用户点击确定')
-              } else if (res.cancel) {
-                console.log('用户点击取消')
-              }
-            }
-          })
-        }
-      }
+
      
       this.setData({
         list: result

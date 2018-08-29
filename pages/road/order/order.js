@@ -54,9 +54,6 @@ Page({
       
   },
   confirm(){
-    wx.showLoading({
-      title: '加载中',
-    })
     const { text } = this.data
     road.payment({ orderId: this.data.orderId}).then(data=>{
       if (text === '确认支付') {
@@ -73,9 +70,9 @@ Page({
             'paySign': paySign,
             'success': function (res) {
               if (res.errMsg == 'requestPayment:ok') {
-                wx.hideLoading()
+                
                 wx.redirectTo({
-                  url: `../../wait/wait?createTime=${createTime}&id=${outTradeNo}`,
+                  url: `../../wait/wait?createTime=${createTime}&outTradeNo=${outTradeNo}`,
                 })
               }
             },
