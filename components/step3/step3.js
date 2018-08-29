@@ -77,7 +77,7 @@ Component({
     getcode(){
       let params = {
         mobile: this.data.params.mobile,
-        type: rescueVerify
+        type: 'rescueVerify'
       }
       road.getcode(params).then(data=>{
         console.log(data)
