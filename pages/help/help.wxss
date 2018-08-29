@@ -22,7 +22,7 @@
 .wechat{
   text-align: center;
   padding-top: 45rpx;
-  padding-bottom: 114rpx;
+  padding-bottom: 55rpx;
 }
 .wechat-word{
   font-size: 22px;
@@ -30,26 +30,31 @@
   letter-spacing: 1px;
 }
 .need{
-  color: #999999;
+  color: #272727;
   padding-bottom: 47rpx;
   font-size: .8rem;
 }
 .wechat image{
   padding-bottom: 47rpx;
 }
+.borderbott{
+  border-bottom:1px solid #ECECEC;
+  padding-bottom:55rpx;
+}
 .bangding{
   color: white;
   background: #FF0000;
-  height: 60rpx;
-  line-height: 60rpx;
+  height: 90rpx;
+  line-height: 90rpx;
   font-size: .8rem;
-  width: 469rpx;
-  border-radius: 30rpx;
+  
+
 }
 .number{
-  font-size: 1rem;
+  font-size: 32rpx;
   padding-top: 94rpx;
   padding-bottom: 38rpx;
+  color: #272727;
 }
 .input{
   margin: 0 auto;
@@ -60,16 +65,13 @@
   font-size: 14px;
 }
 .must{
-  margin-top: 34rpx;
-  background: white;
-  color: #FF0000;
-  height:60rpx; 
-  width: 219rpx;
-  line-height: 60rpx;
-  border-radius: 30rpx;
-  border: 1px solid #FF0000;
-  font-size: .7rem;
-  
+    margin-top:34rpx;
+    background:white;
+    color:#FF0000;
+    height:90rpx;
+    line-height:90rpx;
+    border:1px solid #FF0000;
+    font-size:34rpx;
 }
 .bottom{
   text-align: center;
