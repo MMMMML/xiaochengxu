@@ -59,7 +59,7 @@
           </stepone>
         </view>
         <view wx:elif='{{ step === 2 }}'>
-          <steptwo name='{{ carName }}' rescueType='{{ params.rescueType || 4 }}' bind:steptwo='handleStepTwo'>
+          <steptwo price='{{ params.totalPrice }}' name='{{ carName }}' rescueType='{{ params.rescueType || 4 }}' bind:steptwo='handleStepTwo'>
             <view bindtap='priceDesc' class='slot'>费用说明</view>
           </steptwo>
         </view>

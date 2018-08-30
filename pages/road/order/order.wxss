@@ -22,7 +22,9 @@
   height: 8px;
   background: #F6615B;
   border-radius: 50%;
-  margin-right: 36rpx;
+  margin-right:20rpx;
+  margin-left:20rpx;
+
 }
 .basic{
   margin-top: 48rpx;

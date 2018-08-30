@@ -35,11 +35,12 @@ Component({
     selected(e) {
       const { select } = e.currentTarget.dataset
       let basePriceDict = {
-        1: 198,
+        1: 498,
         2: 100,
         3: 198,
         4: 100
       }
+
       this.setData({
         select,
         rescueType: serviceDict[select],
@@ -114,7 +115,6 @@ Component({
     toParent() {
       const { select, rescueType, pro1, pro2, positionInfo, basePrice, endPositionInfo, addPrice } = this.data
       
-      
       let obj = {
         rescueType: select,
         position: positionInfo.address,
@@ -148,7 +148,8 @@ Component({
             price: 10000,
             type: 2
           })
-        } else if (pro2) {
+        }
+        if (pro2) {
           priceList.push({
             name: '需要附轮',
             price: 10000,
