@@ -23,6 +23,7 @@
 .top .left .default {
   margin-right: 30rpx;
   font-size:26rpx;
+  position: relative;
 }
 
 .top image {
@@ -32,6 +33,17 @@
 
 .default.red {
   color: red;
+}
+
+.red::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -7rpx;
+  left: 3px;
+  right: 3px;
+  height: 1px;
+  background: red;
 }
 
 .info {
@@ -58,6 +70,12 @@
   position: relative;
   padding-left: 48rpx;
   box-sizing: border-box;
+}
+
+.addressInfo {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .plus .one:last-of-type .circle {

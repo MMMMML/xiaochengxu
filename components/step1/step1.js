@@ -35,11 +35,12 @@ Component({
     selected(e) {
       const { select } = e.currentTarget.dataset
       let basePriceDict = {
-        1: 198,
+        1: 498,
         2: 100,
         3: 198,
         4: 100
       }
+
       this.setData({
         select,
         rescueType: serviceDict[select],

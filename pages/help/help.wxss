@@ -17,6 +17,7 @@
   line-height: 120rpx;
   border-bottom: 1px solid #ECECEC;
   padding-left: 44rpx;
+  color: #999;
 }
 .position image{
  padding-right: 17rpx;
