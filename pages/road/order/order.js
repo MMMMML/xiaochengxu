@@ -82,7 +82,7 @@ Page({
           })
         }
       } else {
-        wx.navigateTo({
+        wx.redirectTo({
           url: `../../wait/wait?createTime=${this.createTime}&outTradeNo=${this.id}`,
         })
       }

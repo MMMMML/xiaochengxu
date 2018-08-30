@@ -12,6 +12,16 @@ Component({
       observer() {
         this.toParent()
       }
+    },
+    step: {
+      type: Number,
+      value: 4,
+      observer(newVal) {
+        this.setData({
+          select: newVal,
+          rescueType: serviceDict[newVal]
+        })
+      }
     }
   },
 

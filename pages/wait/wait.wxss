@@ -89,7 +89,7 @@ button{
 }
 .btn{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 30rpx 0;
   width: 100%;
 }
