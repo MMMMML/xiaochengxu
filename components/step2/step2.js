@@ -20,6 +20,10 @@ Component({
           serviceType: serviceDict[newVal]
         })
       }
+    },
+    price: {
+      type: Number,
+      value: 0
     }
   },
 
