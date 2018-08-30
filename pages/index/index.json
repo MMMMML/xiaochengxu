@@ -1,4 +1,5 @@
 {
+  "disableScroll": true,
   "usingComponents": {
     "navbar": "/components/navbar/navbar",
     "stepone": "/components/step1/step1",
