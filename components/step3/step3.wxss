@@ -34,8 +34,9 @@
   display: flex;
   align-items: center;
   font-size: 15px;
-  height: 80rpx;
-  line-height: 80rpx;
+  height: 104rpx;
+  line-height: 104rpx;
+  border-bottom: 1px solid #ececec;
 }
 .car-input input{
   /* width:30%; */

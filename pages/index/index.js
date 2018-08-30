@@ -43,6 +43,7 @@ Page({
         borderRadius:5
       }
     }]
+
   },
   onLoad() {
     this.mapsCtx = wx.createMapContext('myMaps')
@@ -128,9 +129,10 @@ Page({
   },
 
   changeStep(e) {
-    
+    let that = this
     const { type } = e.currentTarget.dataset
     let { step, params } = this.data
+    console.log(params)
     if (step == 1) {
       if (params.rescueType == 1 || params.rescueType == 3){
         if (!params.rescueOrderInfo.endPosition){
@@ -142,85 +144,155 @@ Page({
           return
         }
         
-      }
-    }
-    if(step==2&&type=='add'){
-      if (!params.rescueOrderInfo.vehicleNo) {
-        wx.showToast({
-          title: '请输入车牌号',
-          duration: 3000,
-          icon: 'none'
-        })
-        return
-      }
-      if (!params.rescueOrderInfo.vehicleBrand) {
-        wx.showToast({
-          title: '请选择车型',
-          duration: 3000,
-          icon: 'none'
-        })
-        return
-      }
-    }
-    if (step == 3 && type == 'add'){
-      if(!params.name){
-        wx.showToast({
-          title: '请输入联系人',
-          duration: 3000,
-          icon: 'none'
-        })
-        return
-      }
-      if(!params.mobile){
-        wx.showToast({
-          title: '请输入手机号码',
-          duration: 3000,
-          icon: 'none'
-        })
-        return
-      }
-      if (!params.verify){
-        wx.showToast({
-          title: '请输入验证码',
-          duration: 3000,
-          icon: 'none'
-        })
-        return
-      }
-    }
-    if (type === 'add') {
-      if (step === 3) {
-        road.createOrder(params).then(res => {
-          console.log(res)
-          if(res.code==200){
-            wx.removeStorageSync('getVehiclename')
-            this.setData({
-              step:1
-            })
-            let result = res.payload.id
-            wx.navigateTo({
-              url: `../road/order/order?id=${result}`,
-            })
-
+        const { startLat, startLng, endLat, endLng } = params.rescueOrderInfo
+        let paramss = {
+          fromLng: startLng,
+          formLat: startLat,
+          toLng: endLng,
+          toLat: endLat
+        }
+        road.getdistance(paramss).then(data=>{
+          console.log(22,data)
+          if (type === 'add') {
+            step++
+          } else {
+            step--
           }
-          if(res.code==500){
-            wx.showToast({
-              title: res.message,
-              duration: 3000,
-              icon: 'none'
-            })
-          }
+          let distance = data.payload.result.elements[0].distance
+          console.log(distance)
+          console.log(2, params)
+          that.setData({
+            params: {
+              ...params,
+              rescueOrderInfo: {
+                ...params.rescueOrderInfo,
+                reckonDistance: distance
+              }
+            },
+            step
+          })
         })
+        // wx.request({
+        //   url: 'https://www.easy-mock.com/mock/59e978ad9fb6d12f24ddbc4e/ctx/nginx',
+        //   data: {
+        //     from: `${startLat},${startLng}`,
+        //     to: `${endLat},${endLng}`,
+        //     key: '2JHBZ-UC7WO-MKLWW-SDXUZ-WSI4J-XYF25'
+        //   },
+        //   header: {
+        //     'content-type': 'application/json' // 默认值
+        //   },
+        //   success: function (res) {
+        //     if (type === 'add') {
+        //       step++
+        //     } else {
+        //       step--
+        //     }
+        //     let distance = res.data.result.elements[0].distance
+        //     that.setData({
+        //       params: {
+        //         ...params,
+        //         rescueOrderInfo: {
+        //           ...params.rescueOrderInfo,
+        //           reckonDistance: distance
+        //         }
+        //       },
+        //       step
+        //     })
+        //   }
+        // })
       } else {
-        step++
+        if (type === 'add') {
+          step++
+        } else {
+          step--
+        }
+
+        this.setData({
+          step
+        })
       }
     } else {
-      step--
-    }
+      if (step == 2 && type == 'add') {
+        if (!params.rescueOrderInfo.vehicleNo) {
+          wx.showToast({
+            title: '请输入车牌号',
+            duration: 3000,
+            icon: 'none'
+          })
+          return
+        }
+        if (!params.rescueOrderInfo.vehicleBrand) {
+          wx.showToast({
+            title: '请选择车型',
+            duration: 3000,
+            icon: 'none'
+          })
+          return
+        }
+      }
+      if (step == 3 && type == 'add') {
+        if (!params.name) {
+          wx.showToast({
+            title: '请输入联系人',
+            duration: 3000,
+            icon: 'none'
+          })
+          return
+        }
+        if (!params.mobile) {
+          wx.showToast({
+            title: '请输入手机号码',
+            duration: 3000,
+            icon: 'none'
+          })
+          return
+        }
+        if (!params.verify) {
+          wx.showToast({
+            title: '请输入验证码',
+            duration: 3000,
+            icon: 'none'
+          })
+          return
+        }
+      }
 
-    this.setData({
-      step
-    })
+      if (type === 'add') {
+        if (step === 3) {
+          road.createOrder(params).then(res => {
+            console.log(res)
+            if (res.code == 200) {
+              wx.removeStorageSync('getVehiclename')
+              this.setData({
+                step: 1
+              })
+              let result = res.payload.id
+              wx.navigateTo({
+                url: `../road/order/order?id=${result}`,
+              })
+
+            }
+            if (res.code == 500) {
+              wx.showToast({
+                title: res.message,
+                duration: 3000,
+                icon: 'none'
+              })
+            }
+          })
+        } else {
+          step++
+        }
+      } else {
+        step--
+      }
+
+      this.setData({
+        step
+      })
+    }
+    
   },
 
   priceDesc(flag) {
@@ -235,12 +307,14 @@ Page({
 
   handleStepOne(e) {
     const { detail } = e
+    console.log(1, detail)
     let { params, markers } = this.data
     params = {
       ...params,
       ...detail
     }
     const { startLat, startLng, endLat, endLng } = detail.rescueOrderInfo
+
     this.setData({
       params,
       markers: [{

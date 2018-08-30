@@ -49,7 +49,7 @@
   
 
   <view class='hours'>
-    <text>24小时救援客服热线</text>
+    <text style='font-weight:700'>24小时救援客服热线</text>
     <text>400-111-9299</text>
     <text class='call' bindtap='makecall'>拨打</text>
   </view>

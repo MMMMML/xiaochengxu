@@ -64,7 +64,10 @@ Component({
     multiArray: [years, hours],
     multiIndex: [0, 0],
     params: {},
-    serviceType: ''
+    serviceType: '',
+    getmsg:'获取验证码',
+    isGet: false,
+    sec: 60
   },
 
   /**
@@ -87,7 +90,25 @@ Component({
             duration: 3000,
             icon: 'success'
           })
+          var self = this
+          self.setData({ isGet: true })
+          var remain = 60;
+          var time = setInterval(function () {
+            if (remain == 1) {
+              clearInterval(time)
+              self.setData({
+                sec: 60,
+                isGet: false
+              })
+              return false
+            }
+            remain--;
+            self.setData({
+              sec: remain
+            })
+          }, 1000)
         }
+        
         if(data.code==500){
           wx.showToast({
             title: data.message,

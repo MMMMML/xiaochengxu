@@ -32,7 +32,7 @@
       </view>
       <view class='one'>
         <view class='circle'></view>
-        <view class='addressInfo' bindtap='chooseLocation' data-type='end'>{{ endPositionInfo.address ||'请输入目的地' }}</view>
+        <view class='addressInfo' class="{{!endPositionInfo.address?'placeholder':'addressInfo'}}" bindtap='chooseLocation' data-type='end'>{{ endPositionInfo.address ||'请输入目的地' }}</view>
       </view>
     </view>
     <view class='item radio_box'>

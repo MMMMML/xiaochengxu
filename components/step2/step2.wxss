@@ -15,6 +15,9 @@
   position: relative;  
 
 }
+.placeholder{
+  color: #999999
+}
 .car-square{
   width: 10rpx;
   height: 25rpx;
@@ -40,8 +43,9 @@
   display: flex;
   align-items: center;
   font-size:26rpx;
-  height: 80rpx;
-  line-height: 80rpx;
+  height: 104rpx;
+  line-height: 104rpx;
+  border-bottom: 1px solid #ececec;
 }
 .plate{
   width: 200rpx;
@@ -59,4 +63,9 @@
 .next button{
   width: 40%;
   padding: 0;
+}
+.near-around{
+  display: flex;
+  justify-content: space-between;
+  margin:30rpx 0;
 }

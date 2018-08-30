@@ -1,5 +1,5 @@
 import { serviceDict } from '../../utils/enum.js'
-
+import road from '../../api/road.js'
 Component({
   /**
    * 组件的属性列表
@@ -24,6 +24,15 @@ Component({
     price: {
       type: Number,
       value: 0
+    },
+    distance:{
+      type:Number,
+      value:0,
+      observer(newVal) {
+        this.setData({
+          juli: (newVal / 1000).toFixed(1)
+        })
+      }
     }
   },
 
@@ -32,9 +41,25 @@ Component({
    */
   data: {
     serviceType: '',
-    vehicleNo: ''
+    vehicleNo: '',
+    juli: 0
   },
+  ready: function () { 
+    // wx.request({
+    //   url: 'https://www.easy-mock.com/mock/59e978ad9fb6d12f24ddbc4e/ctx/nginx', 
+    //   data: {
+    //     x: '',
+    //     y: ''
+    //   },
+    //   header: {
+    //     'content-type': 'application/json' // 默认值
+    //   },
+    //   success: function (res) {
+    //     console.log(res.data)
+    //   }
+    // })
 
+  },
   /**
    * 组件的方法列表
    */

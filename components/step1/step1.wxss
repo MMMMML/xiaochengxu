@@ -21,11 +21,17 @@
 }
 
 .top .left .default {
-  margin-right: 30rpx;
+  margin-right: 48rpx;
   font-size:26rpx;
   position: relative;
 }
+.placeholder{
+  color: #999999;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
 
+}
 .top image {
   width: 36rpx;
   height: 36rpx;

@@ -91,6 +91,15 @@ class User extends Base {
       data: params
     })
   }
+
+  //计算距离
+  getdistance(params) {
+    return this.request({
+      url: 'incallWechatMini/rescueOrder/getReckonDistance',
+      type: 'post',
+      data: params
+    })
+  }
 }
 
 export default new User()

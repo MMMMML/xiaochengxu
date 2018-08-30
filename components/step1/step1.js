@@ -137,7 +137,7 @@ Component({
           startLng: positionInfo.longitude,
           startPosition: positionInfo.address,
           reckonPrice: (basePrice + addPrice) * 100,
-          reckonDistance: 1000
+          reckonDistance: 0
         }
       }
       if (select == 1 || select == 3) {
