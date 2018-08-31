@@ -17,9 +17,10 @@ Component({
       type: Number,
       value: 4,
       observer(newVal) {
+        console.log('!!!!!!!!!!')
         this.setData({
-          select: newVal,
-          rescueType: serviceDict[newVal]
+          select: newVal || 4,
+          rescueType: serviceDict[newVal || 4]
         })
       }
     }

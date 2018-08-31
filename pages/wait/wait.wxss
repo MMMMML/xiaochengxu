@@ -94,7 +94,7 @@ button{
   width: 100%;
 }
 .btn button{
-  width: 45%;
+  width: 44%;
   padding: 0;
 }
 .radar-box {
