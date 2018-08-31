@@ -137,7 +137,7 @@ Page({
       if (params.rescueType == 1 || params.rescueType == 3){
         if (!params.rescueOrderInfo.endPosition){
           wx.showToast({
-            title: '请选择结束地址',
+            title: '请选择目的地址',
             duration: 3000,
             icon:'none'
           })
