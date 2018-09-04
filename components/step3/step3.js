@@ -83,7 +83,6 @@ Component({
         type: 'rescueVerify'
       }
       road.getcode(params).then(data=>{
-        console.log(data)
         if(data.code==200){
           wx.showToast({
             title: '验证码已发送',

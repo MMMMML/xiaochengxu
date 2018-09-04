@@ -71,12 +71,13 @@ Page({
       url: `../help/help`,
     })
   },
-
+  // kepu(){
+  //   console.log('~~~~~~~~~!!!!!!!!!')
+  // },
   /**
    * 地图上定位到当前位置
    */
   moveto(e) {
-    console.log(e)
     const { type } = e.currentTarget.dataset
     if (type == 1) {
       this.mapCtx.moveToLocation()
@@ -103,7 +104,6 @@ Page({
     wx.getLocation({
       type: 'gcj02',
       success(res) {
-        console.log(res)
         const { latitude, longitude } = res
         qqmap.reverseGeocoder({
           location: {
@@ -111,7 +111,6 @@ Page({
             longitude
           },
           success(res) {
-            console.log(res)
             const { address, formatted_addresses } = res.result
             _this.setData({
               positionInfo: {
@@ -132,7 +131,6 @@ Page({
     let that = this
     const { type } = e.currentTarget.dataset
     let { step, params } = this.data
-    console.log(params)
     if (step == 1) {
       if (params.rescueType == 1 || params.rescueType == 3){
         if (!params.rescueOrderInfo.endPosition){
@@ -159,8 +157,6 @@ Page({
             step--
           }
           let distance = data.payload.result.elements[0].distance
-          console.log(distance)
-          console.log(2, params)
           that.setData({
             params: {
               ...params,
@@ -172,35 +168,6 @@ Page({
             step
           })
         })
-        // wx.request({
-        //   url: 'https://www.easy-mock.com/mock/59e978ad9fb6d12f24ddbc4e/ctx/nginx',
-        //   data: {
-        //     from: `${startLat},${startLng}`,
-        //     to: `${endLat},${endLng}`,
-        //     key: '2JHBZ-UC7WO-MKLWW-SDXUZ-WSI4J-XYF25'
-        //   },
-        //   header: {
-        //     'content-type': 'application/json' // 默认值
-        //   },
-        //   success: function (res) {
-        //     if (type === 'add') {
-        //       step++
-        //     } else {
-        //       step--
-        //     }
-        //     let distance = res.data.result.elements[0].distance
-        //     that.setData({
-        //       params: {
-        //         ...params,
-        //         rescueOrderInfo: {
-        //           ...params.rescueOrderInfo,
-        //           reckonDistance: distance
-        //         }
-        //       },
-        //       step
-        //     })
-        //   }
-        // })
       } else {
         if (type === 'add') {
           step++
@@ -297,7 +264,6 @@ Page({
 
   priceDesc(flag) {
     let type = this.data.params.rescueType || 4
-    console.log(type)
     wx.navigateTo({
       url: `../price/price?type=${type}`,
     })
@@ -307,7 +273,6 @@ Page({
 
   handleStepOne(e) {
     const { detail } = e
-    console.log(1, detail)
     let { params, markers } = this.data
     params = {
       ...params,
@@ -358,3 +323,4 @@ Page({
     })
   }
 })
+                   

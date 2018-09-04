@@ -12,14 +12,10 @@
         scale="17"
         show-location
         bindcontroltap="controltap">
-        <cover-view class='cover-kepu' >
-            <cover-image src = '../../images/566486558392241748.png' style = 'height:85rpx;width:85rpx;'/>
-        </cover-view >
+        
         <cover-view class='cover' data-type='1' bindtap='moveto'>
             <cover-image src = '../../images/276739983168083286.png' style = 'height:80rpx;width:80rpx;' class='icons'/>
         </cover-view >
-
-        
         <cover-view  class='cover-main' bindtap='help'>
             <cover-image src = '../../images/283859312312914491.png' style = 'height:211rpx;width:211rpx;'/>
         </cover-view>
@@ -40,9 +36,6 @@
         show-location
         markers="{{markers}}"
         bindcontroltap="controltap">
-        <cover-view class='cover-kepu' >
-          <cover-image src = '../../images/566486558392241748.png' style = 'height:85rpx;width:85rpx;'/>
-        </cover-view >
         <cover-view class='cover-road' data-type='2' bindtap='moveto'>
           <cover-image src = '../../images/276739983168083286.png' style = 'height:80rpx;width:80rpx;' class='icons'/>
         </cover-view >
@@ -77,9 +70,20 @@
         </view>
         <view wx:else>
           <button data-type='add' bindtap='changeStep'>下一步</button>
+          
         </view>
       </view>
     </view>
   </navbar>
-  
+   
+
+   <!-- <view class='wapper'>
+    <view class='wapper-white'>
+      <view style='text-align:center;padding:40rpx 0;'>确定跳转吗？</view>
+      <view class='wapper-btn'>
+        <button>确定</button>
+        <button>取消</button>
+      </view>
+    </view>
+   </view> -->
 </view>

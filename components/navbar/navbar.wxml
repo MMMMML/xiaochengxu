@@ -9,6 +9,19 @@
       <view class="default {{selected ? 'red' : ''}}" bindtap="selected">{{left}}</view>
       <view class="default {{selected1 ? 'red' : ''}}" bindtap="selected1">{{right}}</view>
     </view>
+    <view class='orderby1' wx:if='{{order === false}}'>
+     <navigator target="miniProgram" bindcomplete='kepu' open-type="navigate" app-id="wx024c5dd4d2c19408" path="pages/home/home" extra-data="" version="release">
+               <image style = 'height:80rpx;width:80rpx;' src='../../images/566486558392241748.png'></image>
+    </navigator>
+     
+
+
+      <!-- <cover-view class='cover-kepu'>
+            <navigator target="miniProgram" bindcomplete='kepu' open-type="navigate" app-id="wx024c5dd4d2c19408" path="pages/home/home" extra-data="" version="release">
+              <cover-image src = '../../images/566486558392241748.png' style = 'height:85rpx;width:85rpx;'/>
+            </navigator>
+        </cover-view > -->
+    </view>
   </view>
   
   <view class='hh' hidden='{{ !selected }}'>

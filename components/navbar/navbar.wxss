@@ -60,6 +60,13 @@
   position:fixed;
   left:67rpx;
   text-align:center;
+  top:10rpx;
+}
+.orderby1{
+  position:fixed;
+  right:67rpx;
+  text-align:center;
+  top:10rpx;
 }
 .hh {
   min-height: calc(100vh - 100rpx);

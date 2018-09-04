@@ -44,22 +44,7 @@ Component({
     vehicleNo: '',
     juli: 0
   },
-  ready: function () { 
-    // wx.request({
-    //   url: 'https://www.easy-mock.com/mock/59e978ad9fb6d12f24ddbc4e/ctx/nginx', 
-    //   data: {
-    //     x: '',
-    //     y: ''
-    //   },
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   success: function (res) {
-    //     console.log(res.data)
-    //   }
-    // })
 
-  },
   /**
    * 组件的方法列表
    */

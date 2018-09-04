@@ -44,7 +44,7 @@ Page({
     let id= e.currentTarget.dataset.type
     
     wx.navigateTo({
-        url: `../order/order?id=${id}`,
+      url: `../../cancel/cancel?orderId=${id}`,
       })
   },
   onLoad(options) {

@@ -15,7 +15,7 @@ Page({
    */
   onLoad: function (options) {
     let params = {orderId:options.orderId}
-    console.log(options)
+    // console.log(options)
     let member = options.member
     let timeout = options.timeout
 
@@ -63,8 +63,6 @@ Page({
     road.getOrder(params).then(data => {
       console.log(data)
       let result = data.payload
-
-     
       this.setData({
         list: result
       })
