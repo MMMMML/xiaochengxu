@@ -47,7 +47,7 @@ Page({
       url: `../../cancel/cancel?orderId=${id}`,
       })
   },
-  onLoad(options) {
+  onShow(options) {
     this._getlist()
   },
   _getlist(){
@@ -73,9 +73,6 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  
-  },
 
   /**
    * 生命周期函数--监听页面隐藏

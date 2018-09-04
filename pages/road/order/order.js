@@ -24,6 +24,7 @@ Page({
       orderId: this.data.orderId
     }
     road.getOrder(params).then(data=>{
+      console.log(data)
       let result = data.payload
       let member = data.payload.member
       this.id = data.payload.id

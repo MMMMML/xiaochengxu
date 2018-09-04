@@ -59,7 +59,7 @@
      </view>
 
      <view style='width:100%'>
-        <textarea class='textarea'  placeholder="请输入取消原因" />
+        <textarea class='textarea' fixed='true'  placeholder="请输入取消原因" />
      </view>
      <view class='btn'>
           <button data-type='sub' bindtap='quxiao'  style='background:white;color:black;'>取消</button>
