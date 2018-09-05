@@ -32,7 +32,7 @@
       <text>{{list.rescueOrderInfo.startPosition}}</text>
     </view>
     <view class='list' wx:if='{{list.rescueOrderInfo.endPosition!=""}}'>
-      <text>拖车目的地</text>
+      <text>目的地</text>
       <text>{{list.rescueOrderInfo.endPosition}}</text>
     </view>
   </view>
