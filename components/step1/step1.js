@@ -1,6 +1,13 @@
 import { serviceDict } from '../../utils/enum.js'
 import road from '../../api/road.js'
 
+const basePriceDict = {
+  1: 498,
+  2: 100,
+  3: 198,
+  4: 100
+}
+
 Component({
   /**
    * 组件的属性列表
@@ -20,7 +27,8 @@ Component({
         console.log('!!!!!!!!!!')
         this.setData({
           select: newVal || 4,
-          rescueType: serviceDict[newVal || 4]
+          rescueType: serviceDict[newVal || 4],
+          basePrice: basePriceDict[newVal || 4]
         })
       }
     }
@@ -45,12 +53,6 @@ Component({
   methods: {
     selected(e) {
       const { select } = e.currentTarget.dataset
-      let basePriceDict = {
-        1: 498,
-        2: 100,
-        3: 198,
-        4: 100
-      }
 
       this.setData({
         select,
