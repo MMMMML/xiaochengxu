@@ -35,7 +35,7 @@
 .need{
   color: #272727;
   padding-bottom: 34rpx;
-  font-size: 34rpx;
+  font-size: 32rpx;
 }
 .wechat image{
   padding-bottom: 41rpx;

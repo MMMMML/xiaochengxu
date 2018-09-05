@@ -24,17 +24,17 @@
   line-height:100rpx;
   text-align:center;
   justify-content: space-around;
-  color:#000;
-  font-weight:bold;
-  font-size:28rpx;
+  color:#3C3C3C;
+  font-size:30rpx;
   display: inline;
 }
 .default~.default {
   margin-left: 86rpx;
 }
 .red {
-  color: #fc5558;
+  color: #FF0000;
   position: relative;
+  font-weight:700;
 }
 .red:after {
   display: block;
@@ -47,6 +47,7 @@
   height: 5rpx;
   border-radius: 3px;
   background: linear-gradient(to right, #FD8989, #FF0000);
+  
 }
 .show{
   display:block;
@@ -58,22 +59,22 @@
 }
 .orderby{
   position:fixed;
-  left:80rpx;
+  left:40rpx;
   text-align:center;
-  top:10rpx;
+  top:27rpx;
 }
+.top_text {
+  vertical-align: -12rpx;
+  margin-right: 10rpx;
+}
+
 .orderby1{
   position:fixed;
-  right:80rpx;
+  right:40rpx;
   text-align:center;
-  top:15rpx;
+  top:27rpx;
 }
-/* .orderby1{
-  position:fixed;
-  right:20rpx;
-  text-align:center;
-  top:40rpx;
-} */
+
 .hh {
   min-height: calc(100vh - 100rpx);
 }

@@ -16,8 +16,10 @@ App({
         user.toAuth(params).then(data=>{
           console.log(data)
           if(data.code==200){
-            console.log(123)
             wx.setStorageSync('token', data.payload.sessionId)
+          }
+          if(data.code==500){
+              wx.login()
           }
         })
       }

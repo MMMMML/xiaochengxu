@@ -29,7 +29,11 @@
     </view>
     <view class='list'>
       <text>报案地点</text>
-      <text>{{list.position}}</text>
+      <text>{{list.rescueOrderInfo.startPosition}}</text>
+    </view>
+    <view class='list' wx:if='{{list.rescueOrderInfo.endPosition!=""}}'>
+      <text>拖车目的地</text>
+      <text>{{list.rescueOrderInfo.endPosition}}</text>
     </view>
   </view>
   <view class='cancel-list'>
@@ -37,7 +41,7 @@
       <text>付款总额</text>
       <text style='color:#F6615B'>￥{{list.totalPrice/100}}</text>
     </view>
-    <view class='list'>
+    <view class='list' >
       <text>取消原因</text>
       <text style='color:#F6615B'>{{list.cause}}</text>
     </view>
