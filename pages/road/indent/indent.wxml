@@ -1,6 +1,7 @@
 <!--pages/road/indent/indent.wxml-->
 <navbar left='正在进行' right='已完成' order='false' bindselected='selected'>
   <view class='content' slot='before'>
+  <view style='text-align:center' wx:if='{{!orderList1.length}}'>哎呀，您还没有下过订单哦~！</view>
     <view class='order' wx:for='{{orderList1}}' data-type='{{item}}' bindtap='everlist'>
         <view class='order-title'>
           <text style='width:130rpx;font-weight:700;font-size:26rpx'>{{item.rescueName}}</text>
@@ -17,7 +18,8 @@
       </view>
   </view>
   <view class='content' slot='after'>
-      <view class='order' wx:for='{{orderList2}}' data-type='{{item.id}}' bindtap='everlist2'>
+   <view style='text-align:center' wx:if='{{!orderList2.length}}'>哎呀，您还没有下过订单哦~！</view>
+      <view class='order' wx:for='{{orderList2}}'   data-type='{{item.id}}' bindtap='everlist2'>
         <view class='order-title'>
           <text style='width:130rpx;font-weight:700;font-size:26rpx'>{{item.rescueName}}</text>
           <text style='flex:1'>{{item.createTime}}</text>
@@ -32,4 +34,5 @@
       </view>
       </view>
   </view>
+  
 </navbar>

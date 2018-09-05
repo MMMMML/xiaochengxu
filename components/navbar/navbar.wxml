@@ -1,10 +1,10 @@
 <!--components/navbar/navbar.wxml-->
 <view class='box'>
   <view class='content'>
-    <view class='orderby' wx:if='{{order === false}}' >
-     <navigator target="miniProgram" bindcomplete='kepu' open-type="navigate" app-id="wx024c5dd4d2c19408" path="pages/home/home" extra-data=""          version="release">
+    <view class='orderby'>
+     <navigator class='ma' hidden='{{order !== false}}' target="miniProgram" bindcomplete='kepu' open-type="navigate" app-id="wx024c5dd4d2c19408" path="pages/home/home" extra-data=""          version="release">
           <!-- <image style = 'height:40rpx;width:40rpx;' src='../../images/700444959016929918.png'></image> -->
-          <image class='top_text' style = 'height:45rpx;width:45rpx;' src='../../images/595975048216855064.png'></image>
+          <image class='top_text' style = 'height:40rpx;width:40rpx;' src='../../images/595975048216855064.png'></image>
           <text style='font-size:30rpx;color:#272727;'>科普</text>
        </navigator>
     </view>
@@ -12,9 +12,9 @@
       <view class="default {{selected ? 'red' : ''}}" bindtap="selected">{{left}}</view>
       <view class="default {{selected1 ? 'red' : ''}}" bindtap="selected1">{{right}}</view>
     </view>
-    <view class='orderby1' wx:if='{{order === false}}' bindtap='navto'>
-        <image class='top_text' style='width:45rpx;height:45rpx;' src='../../images/57675590519027325.png'></image>
-        <text style='font-size:30rpx;color:#272727;'>订单</text>
+    <view class='orderby1 ma'>
+        <image bindtap='navto' hidden='{{order !== false}}' class='top_text' style='width:40rpx;height:40rpx;' src='../../images/57675590519027325.png'></image>
+        <text bindtap='navto' hidden='{{order !== false}}' style='font-size:30rpx;color:#272727;'>订单</text>
       <!-- <cover-view class='cover-kepu'>
             <navigator target="miniProgram" bindcomplete='kepu' open-type="navigate" app-id="wx024c5dd4d2c19408" path="pages/home/home"                       extra-data="" version="release">
               <cover-image src = '../../images/566486558392241748.png' style = 'height:85rpx;width:85rpx;'/>

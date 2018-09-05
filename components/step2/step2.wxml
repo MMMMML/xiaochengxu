@@ -38,7 +38,7 @@
             <text style='color:#F6615B'>￥{{ price / 100 }}</text>
           </view>
     <view style='text-align:center'>
-      <text style='font-size:.5rem;color:#999;text-align:center'>(请确认您车辆信息，如因填写有误 ，可能会导致您无法享受保障权益而产生费用)</text>
+      <text style='font-size:19rpx;color:#999;text-align:center'>(请确认您车辆信息，如因填写有误 ，可能会导致您无法享受保障权益而产生费用)</text>
 
 </view>
 </view>

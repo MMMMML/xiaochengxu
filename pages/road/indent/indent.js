@@ -9,7 +9,8 @@ Page({
     state:1,
     orderList1: [],
     orderList2: [],
-    status: ['待支付', '待救援', '超时', '用户取消', '服务完成', '服务完成']
+    status: ['待支付', '待救援', '超时', '用户取消', '服务完成', '服务完成'],
+    alert:false,
   },
 
   /**
@@ -60,6 +61,16 @@ Page({
       this.setData({
         [orderList]: result
       })
+      console.log(data.payload.total)
+      if(data.payload.total==0){
+        this.setData({
+          alert:true
+        })
+      }else{
+        this.setData({
+          alert: false
+        })
+      }
     })
   },
 

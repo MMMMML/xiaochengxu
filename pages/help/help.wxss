@@ -9,7 +9,8 @@
 .position{
   display: flex;
   align-items: center;
-  padding: 45rpx 0;
+  height: 120rpx;
+  line-height: 120rpx;
   border-bottom: 1px solid #ECECEC;
 }
 .position-south{
