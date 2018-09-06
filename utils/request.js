@@ -7,7 +7,7 @@ class Base {
 
   request(params) {
     let url = params.setUpUrl === false ? params.url : `${this.baseUrl}${params.url}`
-
+    let that = this
     let contentType
     if (params.contentType) {
       contentType = params.contentType
@@ -34,9 +34,39 @@ class Base {
             resolve(res.data)
           } else {
             if (code == 401) {
-              // 401处理 （如果未授权，需要跳转到Auth页面）
-              wx.navigateTo({
-                url: '/pages/auth/auth'
+              /**
+               *  401时，判断用户是否需要更新信息
+               *  需要更新就直接跳转到auth页面
+               *  不需要更新 1，保存token 2，重新请求，并把data抛出
+              */
+              wx.login({
+                success: res => {
+                  const { code } = res
+                  wx.showLoading({
+                    title: '加载中',
+                    mask: true
+                  })
+                  wx.request({
+                    url: `${that.baseUrl}/incallWechatMini/auth/login`,
+                    method: 'post',
+                    header: {
+                      'content-type': 'application/x-www-form-urlencoded',
+                      'sessionId': wx.getStorageSync('token'),
+                      'X-WxFrom': 4
+                    },
+                    data: { code },
+                    success(res) {
+                      const { sessionId } = res.data.payload
+                      wx.setStorageSync('token', sessionId)
+                      that.request(params).then(res => {
+                        resolve(res)
+                      })
+                    },
+                    complete(res) {
+                      wx.hideLoading()
+                    }
+                  })
+                }
               })
             }
           }
