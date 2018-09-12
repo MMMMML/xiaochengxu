@@ -138,7 +138,32 @@ Component({
         this.triggerEvent('stepthree', this.data.params)
       })
     },
-
+    bindMultiPickerColumnChange: function (e) {
+      console.log(e.detail)
+      // console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
+      var data = {
+        multiArray: this.data.multiArray,
+        multiIndex: this.data.multiIndex
+      };
+      data.multiIndex[e.detail.column] = e.detail.value;
+      let hours = []
+      if (data.multiIndex[0] > 0) {
+        for (let i = 1; i < sec.length; i++) {
+          hours.push(sec[i])
+        }
+      } else {
+        let nowhour = until().format('hh:mm')
+        console.log(2)
+        sec.forEach((item, index) => {
+          if (nowhour < item) {
+            hours.push("" + item);
+          }
+        })
+      }
+      console.log(hours)
+      data.multiArray[1] = hours
+      this.setData(data);
+    },
     handleInput(e) {
       const { type } = e.currentTarget.dataset
       const value = e.detail.value

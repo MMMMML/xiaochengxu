@@ -1,7 +1,7 @@
 import until from '../../../utils/util.js'
 const date = new Date();
 const years = [];
-const hours = [];
+let hours = [];
 let dict = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
 let getDay = new Date().getDay()
 // let value = dict[getDay]
@@ -16,7 +16,6 @@ let time = [
   until().add(7, 'DD').format('YYYY/MM/DD') + dict[(getDay + 7) % 7]]
 
 time.forEach((item, index) => {
-  console.log()
   years.push(item);
 })
 
@@ -26,7 +25,6 @@ let sec = ['尽快','00:00','00.30','01:00','01:30','02:00','02:30','03:00','03:
             '16:30','17:00','17:30','18:00','18:30','19:00','19:30','20:00','20:30','21:00','21:30',
             '22:00','22:30','23:00','23:30']
 let nowhour = until().format('hh:mm')
-console.log(until().format('hh:mm'))
 
 sec.forEach((item, index) => {
   if (nowhour < item ){
@@ -44,7 +42,6 @@ Page({
   },
   //获取时间日期
   bindMultiPickerChange: function (e) {
-    console.log(e)
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       multiIndex: e.detail.value
@@ -62,12 +59,29 @@ Page({
   },
   //监听picker的滚动事件
   bindMultiPickerColumnChange: function (e) {
+    console.log(e.detail)
     // console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
     var data = {
       multiArray: this.data.multiArray,
       multiIndex: this.data.multiIndex
     };
     data.multiIndex[e.detail.column] = e.detail.value;
+    let hours = []
+    if (data.multiIndex[0] > 0) {
+      for (let i = 1; i < sec.length; i++) {
+        hours.push(sec[i])
+      }
+    } else {
+      let nowhour = until().format('hh:mm')
+      console.log(2)
+      sec.forEach((item, index) => {
+        if (nowhour < item) {
+          hours.push("" + item);
+        }
+      })
+    }
+    console.log(hours)
+    data.multiArray[1] = hours
     this.setData(data);
   },
 

@@ -1,8 +1,12 @@
 <!--pages/cancel/cancel.wxml-->
 <view class='box'>
-  <view class='icon'>
+  <view class='icon' wx:if='{{list.state==3||list.state==2}}'>
     <image src='../../images/354820270768124066.png'></image>
     <text>订单已取消</text>
+  </view>
+  <view class='icon' wx:if='{{list.state==5}}'>
+    <image src='../../images/succ.png'></image>
+    <text>订单已完成</text>
   </view>
   <view class='cancel-list'>
     <view class='list'>
