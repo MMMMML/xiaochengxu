@@ -5,10 +5,13 @@ page{
   overflow-y: scroll;
 }
 
-.order{
-  border-bottom: 1px solid #ececec;
-  padding: 30rpx 60rpx;
+.order~.order{
+  border-top: 1px solid #ececec;
 }
+.order{
+  margin: 30rpx 60rpx;
+}
+
 .order-title{
   display: flex;
   padding-top: 30rpx;

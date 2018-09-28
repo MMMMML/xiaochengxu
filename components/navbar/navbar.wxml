@@ -10,7 +10,7 @@
     </view>
     <view class="nav bc_white">
       <view class="default {{selected ? 'red' : ''}}" bindtap="selected">{{left}}</view>
-      <view class="default {{selected1 ? 'red' : ''}}" bindtap="selected1">{{right}}</view>
+      <view class="default {{selected1 ? 'red' : ''}} {{ distance ? 'distance' : '' }}" bindtap="selected1">{{right}}</view>
     </view>
     <view class='orderby1 ma'>
         <image bindtap='navto' hidden='{{order !== false}}' class='top_text' style='width:40rpx;height:40rpx;' src='../../images/57675590519027325.png'></image>

@@ -15,6 +15,10 @@ Component({
     order:{
       type: Boolean,
       value: true
+    },
+    distance: {
+      type: Boolean,
+      value: false
     }
   },
   /**
