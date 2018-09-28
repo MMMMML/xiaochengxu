@@ -139,7 +139,6 @@ Component({
       })
     },
     bindMultiPickerColumnChange: function (e) {
-      console.log(e.detail)
       // console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
       var data = {
         multiArray: this.data.multiArray,
@@ -153,14 +152,12 @@ Component({
         }
       } else {
         let nowhour = until().format('hh:mm')
-        console.log(2)
         sec.forEach((item, index) => {
           if (nowhour < item) {
             hours.push("" + item);
           }
         })
       }
-      console.log(hours)
       data.multiArray[1] = hours
       this.setData(data);
     },
