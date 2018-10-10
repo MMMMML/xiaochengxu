@@ -12,7 +12,13 @@ Page({
     x: '',
     text: '确认支付'
   },
-
+  formSubmit: function (e) {
+    console.log(e.detail.formId)
+    road.cacheformId({ formId: e.detail.formId}).then(data=>{
+      // console.log(data)
+    })
+    this.confirm()
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -54,6 +60,7 @@ Page({
     })
       
   },
+ 
   confirm(){
     const { text } = this.data
     road.payment({ orderId: this.data.orderId}).then(data=>{

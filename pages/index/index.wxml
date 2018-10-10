@@ -76,14 +76,4 @@
     </view>
   </navbar>
    
-
-   <!-- <view class='wapper'>
-    <view class='wapper-white'>
-      <view style='text-align:center;padding:40rpx 0;'>确定跳转吗？</view>
-      <view class='wapper-btn'>
-        <button>确定</button>
-        <button>取消</button>
-      </view>
-    </view>
-   </view> -->
 </view>

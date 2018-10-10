@@ -18,6 +18,13 @@ Page({
     reson:'价格太高',
     plan: ''
   },
+  formSubmit: function (e) {
+    console.log(e.detail.formId)
+    road.cacheformId({ formId: e.detail.formId }).then(data => {
+      // console.log(data)
+    })
+    this.submit()
+  },
   radioChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value)
     this.setData({

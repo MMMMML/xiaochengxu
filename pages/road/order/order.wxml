@@ -53,10 +53,12 @@
     <text>400-111-9299</text>
     <text class='call' bindtap='makecall'>拨打</text>
   </view>
-
-  <view class='order-button'  wx:if='{{ list.state == 0 && x !== "00分00秒" }}'>
-    <button bindtap='confirm'>{{ text }}</button>
+<form bindsubmit="formSubmit" report-submit='true'>
+   <view class='order-button'  wx:if='{{ list.state == 0 && x !== "00分00秒" }}'>
+    <button formType="submit" >{{ text }}</button>
     <text wx:if='{{ x && text === "确认支付" }}'>{{ x }}后订单未支付将自动取消，请您尽快支付</text>
     <text wx:if='{{ x && text === "确认救援" }}'>{{ x }}后订单未确认将自动取消，请您尽快确认</text>
   </view>
+</form>
+ 
 </view>

@@ -100,6 +100,14 @@ class User extends Base {
       data: params
     })
   }
+  //提交formid
+  cacheformId(params) {
+    return this.request({
+      url: 'incallWechatMini/auth/cacheFormId',
+      type: 'post',
+      data: params
+    })
+  }
 }
 
 export default new User()

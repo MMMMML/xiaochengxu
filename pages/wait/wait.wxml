@@ -61,9 +61,12 @@
      <view style='width:100%'>
         <textarea class='textarea' fixed='true'  placeholder="请输入取消原因" />
      </view>
-     <view class='btn'>
+     <form  bindsubmit="formSubmit" report-submit='true'>
+        <view class='btn'>
           <button data-type='sub' bindtap='quxiao'  style='background:white;color:black;'>取消</button>
-          <button data-type='add' bindtap='submit'>提交</button>
-     </view>
+          <button data-type='add' formType="submit">提交</button>
+        </view>
+     </form>
+     
   </view>
 </view>
